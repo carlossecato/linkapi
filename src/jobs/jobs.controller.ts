@@ -13,7 +13,7 @@ export class JobsController {
   }
 
   @Get()
-  findAll() {
+  async findAll(): Promise<any> {
     return this.jobsService.findAll();
   }
 
