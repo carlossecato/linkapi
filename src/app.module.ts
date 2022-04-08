@@ -28,7 +28,7 @@ TypeOrmModule.forRootAsync({
         password: process.env.DB_PASSWORD,
         database: process.env.DB_NAME || 'linkapi',
         entities: [User,Job],
-        synchronize: false
+        synchronize: true
       })
     })
   ,UserModule, JobsModule],

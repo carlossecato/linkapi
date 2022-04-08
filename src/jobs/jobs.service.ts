@@ -9,21 +9,21 @@ import { Job } from './entities/job.entity';
 export class JobsService {
   constructor(
     @InjectRepository(Job)
-    private usersRepository: Repository<Job>,
+    private jobsRepository: Repository<Job>,
     private conection: Connection
   ) {}
 
 
-  create(createJobDto: CreateJobDto) {
-    return 'This action adds a new job';
+  async create(createJobDto: CreateJobDto): Promise<CreateJobDto> {
+    return await this.jobsRepository.save(createJobDto);
   }
 
-  findAll() {
-    return `This action returns all jobs`;
+  async findAll(): Promise<Job[]> {
+    return await this.jobsRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} job`;
+  async findOne(id: number): Promise<Job> {
+    return this.jobsRepository.findOne(id);
   }
 
   update(id: number, updateJobDto: UpdateJobDto) {
