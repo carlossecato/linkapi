@@ -16,7 +16,7 @@ export class ApiService {
   }
 
   public readJobs(){
-    return this.httpClient.get<User[]>(`${this.API_SERVER}/jobs`);
+    return this.httpClient.get<Job[]>(`${this.API_SERVER}/jobs`);
   }
 
   public createUser(user: User){

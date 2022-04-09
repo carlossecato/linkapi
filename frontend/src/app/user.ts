@@ -1,6 +1,7 @@
 export class User {
+    id!: number;
     name!: string;
-    email: string | undefined;
-    password!: string;
+    email!: string;
+    password!: string
     phone!: string;
 }
