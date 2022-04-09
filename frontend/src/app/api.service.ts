@@ -26,4 +26,9 @@ export class ApiService {
   public createJob(job: Job){
     return this.httpClient.post<Job>(`${this.API_SERVER}/jobs/create`, job);
   }
+
+  public updateUser(user: User){
+    return this.httpClient.put<User>(`${this.API_SERVER}/user/${user.id}/update`, user);
+  }
+  
 }

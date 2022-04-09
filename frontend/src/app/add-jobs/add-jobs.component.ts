@@ -3,21 +3,23 @@ import { ApiService } from '../api.service';
 import { Job } from '../job';
 
 @Component({
-  selector: 'app-job',
-  templateUrl: './job.component.html',
-  styleUrls: ['./job.component.css']
+  selector: 'app-add-jobs',
+  templateUrl: './add-jobs.component.html',
+  styleUrls: ['./add-jobs.component.css']
 })
-export class JobComponent implements OnInit {
-  
+export class AddJobsComponent implements OnInit {
   displayedColumns  :  string[] = ['id', 'name', 'user', 'status', 'type', 'value', 'interval', 'fixed'];
   dataSource: Job[] = [];
-  job = {};
+  job = {} as any;
+
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.apiService.readJobs().subscribe((result)=> {
-      console.log(result); 
-      this.dataSource = result;
+  }
+
+  createJobs(job: Job) {
+    this.apiService.createJob(job).subscribe((result)=> {
+      console.log(result);
     })
   }
 
