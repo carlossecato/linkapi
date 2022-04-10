@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # linkapi
   # Stack used
  - Backend: NestJs a Node framework, using npm for packages manager.
