@@ -8,7 +8,6 @@
   # Local Db Config
  - Cofigure dB to correct work database: In file app.module.ts, add the environment of the local database. Please select the type, host, port, username, password and db name. After, please start server with the command: npm run start.
 
-=======
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
